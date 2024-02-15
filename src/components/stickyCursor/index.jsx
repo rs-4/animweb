@@ -40,20 +40,17 @@ export default function index({stickyElement}) {
 
     if(isHovered){
 
-      //distance between the mouse pointer and the center of the custom cursor and 
       const distance = {x: clientX - center.x, y: clientY - center.y}
-      
-      //rotate
+
       rotate(distance)
 
-      //stretch based on the distance
+
       const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
       const newScaleX = transform(absDistance, [0, height/2], [1, 1.3])
       const newScaleY = transform(absDistance, [0, width/2], [1, 0.8])
       scale.x.set(newScaleX);
       scale.y.set(newScaleY);
       
-      //move mouse to center of stickyElement + slightly move it towards the mouse pointer
       mouse.x.set((center.x - cursorSize / 2) + (distance.x * 0.1));
       mouse.y.set((center.y - cursorSize / 2) + (distance.y * 0.1));
     }

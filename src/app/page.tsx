@@ -3,6 +3,7 @@ import styles from './page.module.scss'
 import { useRef } from 'react';
 import Header from '../components/header';
 import StickyCursor from '../components/stickyCursor';
+import ZoomParalax from '../components/zoomParallax';
 
 export default function Home() {
   
@@ -12,7 +13,8 @@ export default function Home() {
     <main className={styles.main}>
       <Header ref={stickyElement}/>
       <StickyCursor stickyElement={stickyElement}/>
-      <div style={{height:3000}}></div>
+      <ZoomParalax/>
+      <div></div>
     </main>
   )
 }
